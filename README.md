@@ -1,73 +1,348 @@
-# React + TypeScript + Vite
+# 📚 React Component Library with Storybook
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📋 Про проект
 
-Currently, two official plugins are available:
+Ця бібліотека компонентів React містить три
+перевикористовуваних UI-компонента з різними станами та
+пропсами. Проект побудований на сучасному стеку технологій
+(Vite, TypeScript, CSS Modules), а всі компоненти
+задокументовані та візуалізовані в **Storybook**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🎯 Компоненти
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1\. Input Component
 
-## Expanding the ESLint configuration
+Розумний компонент вводу з підтримкою різних типів та
+функціональностей.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Типи:** `text`, `password`, `number`
+- **Функціонал:** Перемикання видимості пароля (іконка ока)
+- **UX:** Очищення вводу (іконка "X")
+- **Атрибути:** Підтримка плейсхолдерів, labels та станів
+  помилок
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 2\. Toast Component
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Компонент спливаючих сповіщень.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **Типи:** `success`, `error`, `info`, `warning`
+- **Поведінка:** Автоматичне закриття через заданий час
+  (duration)
+- **Анімація:** Плавна поява та зникнення
+- **Управління:** Можливість закриття вручну
+
+### 3\. Sidebar Menu Component
+
+Бічне меню з вкладеною структурою.
+
+- **Анімація:** Слайд-ефект з правого боку
+- **Структура:** Розгортання/згортання вкладених підменю
+- **Backdrop:** Закриття по кліку на фон
+
+---
+
+## 🚀 Встановлення та запуск
+
+### Передумови
+
+- **Node.js** (версія 16 або вище)
+- **npm** або **yarn**
+
+### Кроки встановлення
+
+1.  **Встановлення залежностей:**
+
+    ```
+    npm install
+    # або
+    yarn install
+    ```
+
+2.  **Запуск демо-додатку:**
+
+    ```
+    npm run dev
+    # або
+    yarn dev
+    ```
+
+3.  **Запуск Storybook:**
+
+    ```
+    npm run storybook
+    # або
+    yarn storybook
+    ```
+
+---
+
+## 🛠 Технології
+
+| Технологія            | Опис                                |
+| --------------------- | ----------------------------------- |
+| **React 18**          | Бібліотека для побудови інтерфейсів |
+| **TypeScript**        | Статична типізація                  |
+| **Storybook 7**       | Розробка та тестування компонентів  |
+| **CSS Modules**       | Локалізація стилів                  |
+| **Vite**              | Швидкий бандлер та dev сервер       |
+| **ESLint + Prettier** | Лінтер та форматер коду             |
+
+---
+
+## 📖 Використання компонентів
+
+## 📸 Скріншоти компонентів
+
+### Storybook UI
+
+**Головна сторінка Storybook:**
+![Storybook Main](./screenshots/storybook-main.png)
+
+### Input Component
+
+**Всі історії Input компонента:**
+![Input Stories](./screenshots/input-stories.png)
+
+**Input з кнопкою очищення:**
+![Input Clearable](./screenshots/input-clearable.png)
+
+**Input для пароля з іконкою ока:**
+![Input Password](./screenshots/input-password.png)
+
+### Toast Component
+
+**Всі типи Toast:**
+![Toast Stories](./screenshots/toast-stories.png)
+
+**Toast в дії:** ![Toast Demo](./screenshots/toast-demo.png)
+
+### Sidebar Menu Component
+
+**Всі історії Sidebar Menu:**
+![Sidebar Stories](./screenshots/sidebar-stories.png)
+
+**Відкритий Sidebar з розгорнутим підменю:**
+![Sidebar Expanded](./screenshots/sidebar-expanded.png)
+
+### Демо додаток
+
+**Головна сторінка демо-додатку:**
+![Demo App](./screenshots/demo-app.png)
+
+**Всі компоненти в роботі разом:**
+![All Components](./screenshots/all-components.png)
+
+### Input Component
+
+```
+import { useState } from 'react';
+import Input from './components/Input/Input';
+
+function MyForm() {
+  const [value, setValue] = useState('');
+
+  return (
+    <Input
+      type="password"
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+      clearable
+      placeholder="Enter password"
+    />
+  );
+}
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Toast Component
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+import { useState } from 'react';
+import Toast from './components/Toast/Toast';
+
+function App() {
+  const [showToast, setShowToast] = useState(false);
+
+  return (
+    <>
+      <button onClick={() => setShowToast(true)}>
+        Show Toast
+      </button>
+
+      {showToast && (
+        <Toast
+          message="Operation successful!"
+          type="success"
+          duration={3000}
+          onClose={() => setShowToast(false)}
+        />
+      )}
+    </>
+  );
+}
+```
+
+### Sidebar Menu Component
+
+```
+import { useState } from 'react';
+import SidebarMenu from './components/SidebarMenu/SidebarMenu';
+
+function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const menuItems = [
+    { id: '1', label: 'Home' },
+    {
+      id: '2',
+      label: 'Products',
+      children: [
+        { id: '2-1', label: 'Clothing' },
+        { id: '2-2', label: 'Electronics' }
+      ]
+    }
+  ];
+
+  return (
+    <>
+      <button onClick={() => setIsOpen(true)}>
+        Open Menu
+      </button>
+
+      <SidebarMenu
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        items={menuItems}
+        title="Navigation"
+      />
+    </>
+  );
+}
+```
+
+---
+
+## 📂 Структура проекту
+
+```
+src/
+├── components/
+│   ├── Input/
+│   │   ├── Input.tsx
+│   │   ├── Input.module.css
+│   │   └── Input.stories.tsx
+│   ├── Toast/
+│   │   ├── Toast.tsx
+│   │   ├── Toast.module.css
+│   │   └── Toast.stories.tsx
+│   └── SidebarMenu/
+│       ├── SidebarMenu.tsx
+│       ├── SidebarMenu.module.css
+│       └── SidebarMenu.stories.tsx
+├── .storybook/           # Налаштування Storybook
+├── public/               # Статичні файли
+└── README.md
+```
+
+---
+
+## 🎨 Дизайн система
+
+### Кольори
+
+- 🔵 **Primary:** `#646cff`
+- 🟢 **Success:** `#4caf50`
+- 🔴 **Error:** `#f44336`
+- 🟠 **Warning:** `#ff9800`
+- ℹ️ **Info:** `#2196f3`
+- ⚪ **Background:** `#ffffff`
+- ⚫ **Text:** `#333333`
+
+### Шрифти
+
+`system-ui`, `Avenir`, `Helvetica`, `Arial`, `sans-serif`
+
+---
+
+## 📸 Скріншоти компонентів
+
+> Натисніть на розділ, щоб розгорнути скріншоти
+
+\<details\> \<summary\>\<b\>Storybook UI\</b\>\</summary\>
+
+**Головна сторінка Storybook:**
+
+\</details\>
+
+\<details\> \<summary\>\<b\>Input
+Component\</b\>\</summary\>
+
+**Всі історії Input компонента:**
+
+**Input з кнопкою очищення:**
+
+**Input для пароля з іконкою ока:**
+
+\</details\>
+
+\<details\> \<summary\>\<b\>Toast
+Component\</b\>\</summary\>
+
+**Всі типи Toast:**
+
+**Toast в дії:**
+
+\</details\>
+
+\<details\> \<summary\>\<b\>Sidebar Menu
+Component\</b\>\</summary\>
+
+**Всі історії Sidebar Menu:**
+
+**Відкритий Sidebar з розгорнутим підменю:**
+
+\</details\>
+
+\<details\> \<summary\>\<b\>Демо додаток\</b\>\</summary\>
+
+**Головна сторінка демо-додатку:**
+
+**Всі компоненти в роботі разом:**
+
+\</details\>
+
+---
+
+## 📝 Скрипти package.json
+
+| Скрипт            | Команда                 | Опис                              |
+| ----------------- | ----------------------- | --------------------------------- |
+| `dev`             | `vite`                  | Запуск сервера розробки           |
+| `build`           | `tsc && vite build`     | Перевірка типів та збірка проекту |
+| `preview`         | `vite preview`          | Попередній перегляд збірки        |
+| `storybook`       | `storybook dev -p 6006` | Запуск Storybook                  |
+| `build-storybook` | `storybook build`       | Збірка Storybook для деплою       |
+| `lint`            | `eslint . --ext ts,tsx` | Лінтер коду                       |
+
+---
+
+## ✅ Статус вимог
+
+**Обов'язкові вимоги:**
+
+- [x] Ініціалізовано React проект з Vite + TypeScript
+- [x] Ініціалізовано Storybook (`npx storybook init`)
+- [x] Створено 3 компоненти: Input, Toast, Sidebar Menu
+- [x] Додано `.stories.tsx` файли для кожного компонента
+- [x] Компоненти працюють локально в Storybook
+- [x] Код якісний (ESLint + Prettier + TypeScript)
+- [x] README.md з інструкціями та скріншотами
+
+**Бонусні пункти:**
+
+- [x] @storybook/addon-controls (включено в essentials)
+- [x] CSS анімації та переходи
+- [ ] React Hook Form (опційно - не використано)
+
+---

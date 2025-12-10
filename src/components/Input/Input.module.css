@@ -1,0 +1,90 @@
+.inputContainer {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.inputWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    padding-right: 3rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #213547;
+    background-color: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.input:focus {
+    border-color: #646cff;
+    box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.1);
+}
+
+.input::placeholder {
+    color: #94a3b8;
+}
+
+.input.hasIcons {
+    padding-right: 3.5rem;
+}
+
+.input.error {
+    border-color: #f44336;
+    background-color: #fff5f5;
+}
+
+.input.error:focus {
+    border-color: #f44336;
+    box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.1);
+}
+
+.errorMessage {
+    color: #f44336;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    margin-left: 0.5rem;
+}
+
+.actionWrapper {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.iconButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.iconButton:hover {
+    background-color: rgba(100, 108, 255, 0.1);
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    fill: #64748b;
+    transition: fill 0.2s;
+}
+
+.iconButton:hover .icon {
+    fill: #646cff;
+}

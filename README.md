@@ -97,7 +97,7 @@
 
 ### Storybook UI
 
-**Головна сторінка Storybook:**
+**Всі компонент**
 ![Storybook Main](./screenshots/storybook-main.png)
 
 ### Input Component
@@ -131,8 +131,7 @@
 **Головна сторінка демо-додатку:**
 ![Demo App](./screenshots/demo-app.png)
 
-**Всі компоненти в роботі разом:**
-![All Components](./screenshots/all-components.png)
+
 
 ### Input Component
 
@@ -245,74 +244,9 @@ src/
 └── README.md
 ```
 
----
-
-## 🎨 Дизайн система
-
-### Кольори
-
-- 🔵 **Primary:** `#646cff`
-- 🟢 **Success:** `#4caf50`
-- 🔴 **Error:** `#f44336`
-- 🟠 **Warning:** `#ff9800`
-- ℹ️ **Info:** `#2196f3`
-- ⚪ **Background:** `#ffffff`
-- ⚫ **Text:** `#333333`
-
-### Шрифти
-
-`system-ui`, `Avenir`, `Helvetica`, `Arial`, `sans-serif`
 
 ---
 
-## 📸 Скріншоти компонентів
-
-> Натисніть на розділ, щоб розгорнути скріншоти
-
-\<details\> \<summary\>\<b\>Storybook UI\</b\>\</summary\>
-
-**Головна сторінка Storybook:**
-
-\</details\>
-
-\<details\> \<summary\>\<b\>Input
-Component\</b\>\</summary\>
-
-**Всі історії Input компонента:**
-
-**Input з кнопкою очищення:**
-
-**Input для пароля з іконкою ока:**
-
-\</details\>
-
-\<details\> \<summary\>\<b\>Toast
-Component\</b\>\</summary\>
-
-**Всі типи Toast:**
-
-**Toast в дії:**
-
-\</details\>
-
-\<details\> \<summary\>\<b\>Sidebar Menu
-Component\</b\>\</summary\>
-
-**Всі історії Sidebar Menu:**
-
-**Відкритий Sidebar з розгорнутим підменю:**
-
-\</details\>
-
-\<details\> \<summary\>\<b\>Демо додаток\</b\>\</summary\>
-
-**Головна сторінка демо-додатку:**
-
-**Всі компоненти в роботі разом:**
-
-\</details\>
-
----
 
 ## 📝 Скрипти package.json
 
